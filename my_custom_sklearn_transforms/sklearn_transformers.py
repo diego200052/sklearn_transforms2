@@ -23,5 +23,6 @@ class DropNA(BaseEstimator, TransformerMixin):
     def transform(self, X):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
+        data.dropna()
         # Retornamos um novo dataframe sem as colunas indesejadas
-        return data.dropna()
+        return data
