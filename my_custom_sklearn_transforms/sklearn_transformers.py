@@ -15,7 +15,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
 
-class DataFrameImputer(TransformerMixin):
+class DropNA(TransformerMixin):
 
     def __init__(self):
         """Impute missing values.
@@ -30,4 +30,4 @@ class DataFrameImputer(TransformerMixin):
         return self
 
     def transform(self, X, y=None):
-        return df2.dropna(axis='index', how='any')
+        return X.dropna(axis='index', how='any')
